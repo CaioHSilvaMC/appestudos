@@ -13,7 +13,7 @@ class AppController extends ChangeNotifier {
     Materias(nome: 'Geometria Plana'),
     Materias(nome: 'Geometria Espacial'),
     Materias(nome: 'Funções e Equações'),
-    Materias(nome: 'Probalidade'),
+    Materias(nome: 'Probabilidade'),
     Materias(nome: 'Combanitária'),
     Materias(nome: 'Matrizes'),
     Materias(nome: 'Trigonometria'),
