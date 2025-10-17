@@ -109,11 +109,13 @@ class _ProbabilidadeView extends State<ProbabilidadeView> {
                       ),
                     ),
                   );
+                }else{
+                  Navigator.pop(context);
                 }
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor:
-                    ctrl.finalizado ? Colors.grey : Colors.blueAccent,
+                    ctrl.finalizado ? Colors.grey: Colors.blueAccent,
                 minimumSize: const Size(double.infinity, 50),
               ),
               child: Text(

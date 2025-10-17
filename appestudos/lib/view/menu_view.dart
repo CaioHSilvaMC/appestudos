@@ -1,6 +1,10 @@
 import 'package:appestudos/controller/app_controller.dart';
+import 'package:appestudos/view/aritimetica_view.dart';
+import 'package:appestudos/view/geoespacial_view.dart';
 import 'package:appestudos/view/grandezas_view.dart';
+import 'package:appestudos/view/matrizes_view.dart';
 import 'package:appestudos/view/probabilidade_view.dart';
+import 'package:appestudos/view/sobre_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -28,6 +32,17 @@ class _MenuView extends State<MenuView> {
           'Bem Vindo ${ctrl.email}',
           style: TextStyle(color: Colors.white),
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.help_outline),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SobreView()),
+              );
+            },
+          ),
+        ],
         backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
@@ -56,6 +71,23 @@ class _MenuView extends State<MenuView> {
                   context,
                   MaterialPageRoute(builder: (context) => const GrandezasView()),
                 );
+                popup(context);
+              break;
+
+              case 'Aritimética':
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context) => const AritimeticaView()),
+                );
+                popup(context);
+              break;
+
+              case 'Geometria Espacial':
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context) => const GeoespacialView()),
+                );
+                popup(context);
               break;
 
               case 'Probabilidade':
@@ -63,6 +95,15 @@ class _MenuView extends State<MenuView> {
                   context, 
                   MaterialPageRoute(builder: (context) => const ProbabilidadeView()),
                 );
+                popup(context);
+              break;
+
+              case 'Matrizes':
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context) => const MatrizesView()),
+                );
+                popup(context);
               break;
             }
           },
@@ -88,4 +129,14 @@ class _MenuView extends State<MenuView> {
       },
     );
   }
+}
+
+void popup(context) {
+  showDialog(
+    context: context,
+    builder: (context) => const AlertDialog(
+    title: Text('Teste seus Conhecimentos!'),
+      content: Text('Aqui haverá questões sobre a matéria que será estudada. O objetivo é avaliar seus conhecimentos prévios, então não se preocupe na quantidade de acertos.'),
+    ),
+  );
 }

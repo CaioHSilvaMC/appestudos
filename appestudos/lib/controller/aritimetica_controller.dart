@@ -1,17 +1,17 @@
 import 'package:appestudos/model/perguntas_model.dart';
 import 'package:flutter/material.dart';
 
-class FuncoesController extends ChangeNotifier{
+class AritimeticaController extends ChangeNotifier{
   final List<Perguntas> _perguntas = [
     Perguntas(
-      pergunta: '',
-      opcoes: ['10.000 L', '20.000 L', '30.000 L', '40.000 L'],
-      resposta: '40.000 L',
+      pergunta: 'Uma empresa precisa distribuir 2400 folhetos igualmente entre 8 funcionários. Quantos folhetos cada funcionário receberá?',
+      opcoes: ['200', '250', '300', '350'],
+      resposta: '300',
     ),
     Perguntas(
-      pergunta: '',
-      opcoes: ['2 min', '3 min', '4 min', '5 min'],
-      resposta: '5 min',
+      pergunta: 'Em uma promoção, um supermercado vende pacotes de arroz com 25% de desconto. Se o preço original de um pacote de arroz é 48 reais, qual será o preço com o desconto?',
+      opcoes: ['34 Reais', '36 Reais', '38 Reais', '40 Reais'],
+      resposta: '36 Reais',
     ),
   ];
 

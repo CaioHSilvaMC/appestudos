@@ -109,6 +109,8 @@ class _GrandezasView extends State<GrandezasView> {
                       ),
                     ),
                   );
+                }else{
+                  Navigator.pop(context);
                 }
               },
               style: ElevatedButton.styleFrom(

@@ -14,6 +14,7 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
   final AppController ctrl = GetIt.I.get<AppController>();
+  bool _obscureText = true;
 
   @override
   void initState() {
@@ -82,7 +83,7 @@ class _LoginViewState extends State<LoginView> {
                   SizedBox(height: 20),
 
                   TextFormField(
-                    obscureText: true,
+                    obscureText: _obscureText,
                     decoration: InputDecoration(
                       labelStyle: TextStyle(
                         color: Color.fromARGB(255, 206, 232, 236),
@@ -101,6 +102,17 @@ class _LoginViewState extends State<LoginView> {
                         borderSide: BorderSide(
                           color: Color.fromARGB(255, 206, 232, 236),
                         ),
+                      ),
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                          _obscureText = !_obscureText;
+                          });
+                        },
+                        icon: Icon(
+                          _obscureText ? Icons.visibility : Icons.visibility_off,
+                        ),
+                        tooltip: _obscureText ? 'Mostrar senha' : 'Ocultar senha',
                       ),
                     ),
                     onChanged: (value) => ctrl.cadastrarSenha(value),
